@@ -20,7 +20,28 @@ public class Jugador {
   }
   
   public void guardarProgreso () {
-    this.juego.
-    
+    this.juego.actualizarJugador(this.index, this);    
+  }
+
+  public void addItem (Objeto item) {
+    this.inventario.addItem(item);
+  }
+  public void removeItem (Objeto item) {
+    this.inventario.removeItem(item);
+  }
+  
+  public ArrayList<Objeto> getInventarioItems() {
+    return this.inventario.getItems();
+  }
+  
+  public void clearInventario() {
+    this.inventario.clearItems();
+  }
+  
+  public void mostrarInventario() {
+    for (Objeto item : this.getInventarioItems()) {
+      System.out.println(item.getNombre());
+    }
+    System.out.println("Total items: " + this.getInventarioItems().size());
   }
 }
